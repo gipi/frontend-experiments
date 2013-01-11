@@ -1,0 +1,9 @@
+Experimentation about SASS, COMPASS, HAML and the latest technologies
+for frontend development.
+
+In order to use all of this
+
+ $ gem install compass --user-install
+ $ bower install semantic-grid
+ $ compass compile
+ $ haml index.haml > index.html
