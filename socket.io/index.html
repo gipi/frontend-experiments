@@ -1,19 +1,21 @@
 <html>
     <title>Socket.io experiment</title>
     <body>
+        <p>
+        My beat <span id="display_tick"></span>
+        </p>
         <!-- this page must be server from the server, if loaded by file://
              you must add localhost:8000 to the src attribute
         -->
         <script src="/socket.io/socket.io.js"></script>
         <script>
           var socket = io.connect('http://localhost:8000');
+          var display_tick = document.getElementById('display_tick');
+
           socket.on('tick', function(data) {
               console.log(data);
-              document.getElementById('display_tick').innerHTML += '.';
+              display_tick.innerHTML += '.';
           });
         </script>
-        <p>
-        My beat <span id="display_tick"></span>
-        </p>
     </body>
 </html>
