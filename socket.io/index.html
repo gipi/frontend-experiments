@@ -7,10 +7,13 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
           var socket = io.connect('http://localhost:8000');
-          socket.on('news', function (data) {
-            console.log(data);
-            socket.emit('my other event', { my: 'data' });
+          socket.on('tick', function(data) {
+              console.log(data);
+              document.getElementById('display_tick').innerHTML += '.';
           });
         </script>
+        <p>
+        My beat <span id="display_tick"></span>
+        </p>
     </body>
 </html>
