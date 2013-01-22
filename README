@@ -14,4 +14,7 @@ socket.io/ contains simple exaple of using socket.io functionality
  $ npm install socket.io
  $ node socket.io/server.js
 
-and go to localhost:8000 in the browser of your choice.
+and go to localhost:8000 in the browser of your choice. It also possible
+to use a simple chat demo
+
+ $ node socket.io/chat.js

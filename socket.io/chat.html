@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Socket.io chat experiment</title>
+        <link rel="stylesheet" href="chat.css"/>
+    </head>
+    <body onload="init();">
+        <section id="chat_container">
+            <textarea id="chat_window"></textarea>
+            <input type="text" id="input_entry"/>
+        </section>
+        <!-- this page must be server from the server, if loaded by file://
+             you must add localhost:8000 to the src attribute
+        -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+          var users = new Array();
+          var socket = io.connect('http://localhost:8800');
+          socket.on('updatechat', function(username, message) {
+              update_chat(username + ': ' +message);
+          });
+          socket.on('new user', function(msg) {
+              users.push(msg);
+
+              update_chat('new user: ' + msg);
+          });
+          socket.on('remove user', function(username) {
+              update_chat(username + 'is disconneted');
+              users.splice(users.indexOf(username), 1);
+          });
+          function init() {
+              document.getElementById('input_entry').addEventListener('keyup', function(evt) {
+                  if (evt.keyCode == 13) {
+                      var message = this.value;
+                      console.log(message);
+                      socket.emit('msg', message);
+
+                      // empty the input
+                      this.value = '';
+                  }
+              });
+          }
+
+          function update_chat(line) {
+              document.getElementById('chat_window').innerHTML += line + '\n';
+          }
+        </script>
+    </body>
+</html>

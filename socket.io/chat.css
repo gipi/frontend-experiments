@@ -1,0 +1,16 @@
+#chat_container {
+  width:250px;
+}
+
+#chat_container > * {
+    width:100%;
+    display:block;
+}
+
+#chat_container textarea {
+  height:200px;
+}
+
+#chat_container input[type="text"] {
+    border:1px solid black;
+}
