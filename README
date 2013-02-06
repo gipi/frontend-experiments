@@ -3,11 +3,21 @@ for frontend development.
 
 In order to use all of this
 
+SASS
+----
+
  $ gem install compass --user-install
  $ bower install semantic-grid
  $ compass compile
  $ haml index.haml > index.html
 
+LESS
+----
+
+ $ npm install less
+
+SOCKETIO
+--------
 
 socket.io/ contains simple exaple of using socket.io functionality
 

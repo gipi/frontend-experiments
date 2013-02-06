@@ -1,0 +1,14 @@
+.btn {
+    display:inline;
+    cursor: pointer;
+    padding:5px 10px;
+    font-weight: bold;
+    .gradientBar(@btnStartColor, @btnStopColor);
+    .rounded-corners();
+    &:hover {
+        color: rgba(255,255,255,.75);
+    }
+}
+
+.btn.is-pressed {
+}

@@ -1,0 +1,29 @@
+// here we go with layout stuff
+
+/*
+ * This is the main layout: since its main aim is to contain
+ * object, we set no margin.
+ */
+.l() {
+    margin:0px;
+    padding:10px;
+    height:100%;
+}
+
+/*
+ * This two below are a very simple two column layout.
+ *
+ * Maybe we should use id selectors to force to be used only in one place
+ * or make them more generics.
+ */
+.l-sidebar {
+    .l();
+    float:left;
+    width:30%;
+}
+
+.l-content {
+    .l();
+    width:60%;
+    float:right;
+}
