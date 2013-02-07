@@ -40,13 +40,8 @@
 .l-grid {
     .l();
     list-style-type: none;
+    .clearfix();
 
-    // TODO: create mixin .clearfix()
-    &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
     & > li {
         float:left;
         /* IE7 hack to mimic inline-block on block elements */

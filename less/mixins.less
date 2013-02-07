@@ -30,3 +30,12 @@
     border:1px solid black;
 }
 
+// http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
+.clearfix() {
+    zoom: 1;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
