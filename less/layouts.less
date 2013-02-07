@@ -6,8 +6,17 @@
  */
 .l() {
     margin:0px;
-    padding:10px;
+    padding:0px;
     height:100%;
+}
+
+/*
+ * This create rules such that the element is contained into
+ * the column width, removing the gutter from two sides by the margins.
+ */
+.column-span(@count) {
+    width:@count * @columnWidth - 2*@columnGutter;
+    margin:0px @columnGutter 0px @columnGutter;
 }
 
 /*
@@ -18,12 +27,38 @@
  */
 .l-sidebar {
     .l();
+    .column-span(3);
     float:left;
-    width:30%;
 }
 
 .l-content {
     .l();
-    width:60%;
+    .column-span(9);
     float:right;
+}
+
+.l-grid {
+    .l();
+    list-style-type: none;
+
+    // TODO: create mixin .clearfix()
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    & > li {
+        float:left;
+        /* IE7 hack to mimic inline-block on block elements */
+        *display: inline;
+        *zoom: 1;
+        .column-span(3);
+
+        &:first-of-type {
+            margin-right:0px;
+        }
+        &:last-of-type {// FIXME: use nth-of-type
+            margin-right:0px;
+        }
+    }
 }

@@ -1,3 +1,19 @@
+/*
+ * If you want to customize main styling change values associated
+ * with the variables defined below.
+ *
+ * For now we choose a layout of 12 columns with a fixed width of 1024px;
+ * We are using the box model <https://developer.mozilla.org/en-US/docs/CSS/box-sizing>
+ * i.e. including padding and border in its width.
+ */
+@bodyWidth:      1024px;
+@numberOfColumn: 12;
+
+@padding:        10px;
+
+@columnGutter:   5px;
+@columnWidth:    (@bodyWidth/@numberOfColumn);
+
 @btnStartColor: #ccc;
 @btnStopColor: darken(@btnStartColor, 15%);
 
