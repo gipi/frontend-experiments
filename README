@@ -7,6 +7,7 @@ SASS
 ----
 
  $ gem install compass --user-install
+ $ npm install bower
  $ bower install semantic-grid
  $ compass compile
  $ haml index.haml > index.html
