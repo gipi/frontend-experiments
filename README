@@ -37,3 +37,19 @@ If (like me) you want to install node locally you can use the package
 named virtual-node with pip
 
  $ pip install virtual-node
+
+otherwise you can download the source code and install nodejs using 
+the well known ./configure && make && make install.
+
+AMD
+---
+
+It's a simple example on how to create a simple modular JS application: it
+uses the browserify command that bundles all the necessary libraries in one
+single file.
+
+In order to see the result follow the steps below:
+
+ $ npm install backbone
+ # npm install -global browserify
+ $ browserify --entry AMD/scripts/app.js AMD/scripts/main.js > AMD/scripts/bundle.js
