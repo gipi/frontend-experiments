@@ -37,6 +37,27 @@ If (like me) you want to install node locally you can use the package
 named virtual-node with pip
 
  $ pip install virtual-node
+ 
+After that is possible to install yeoman and yo simply with
+
+ $ npm install yo
+ 
+If installing a generator doesn't show you can use
+
+ $ yo doctor
+ [Yeoman Doctor] Uh oh, I found potential errors on your machine
+ ---------------
+
+ [Error] NPM root value is not in your NODE_PATH
+  [info]
+    NODE_PATH = /tmp/node_modules/
+    NPM root  = /tmp/env/lib/node_modules
+
+  [Fix] Append the NPM root value to your NODE_PATH variable
+    Add this line to your .bashrc
+      export NODE_PATH=$NODE_PATH:/tmp/env/lib/node_modules
+    Or run this command
+      echo "export NODE_PATH=$NODE_PATH:/tmp/env/lib/node_modules" >> ~/.bashrc && source ~/.bashrc
 
 otherwise you can download the source code and install nodejs using 
 the well known ./configure && make && make install.
