@@ -1,17 +1,28 @@
-$width: 50px;
+$textColor: black;
 
-* {
-    box-sizing:border-box;
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body,
 ul,
 ol {
-   margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    min-width:$width;
+ul, ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: $textColor;
+}
+
+a:visited {
+    color: $textColor;
 }
